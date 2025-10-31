@@ -7,13 +7,15 @@ import {
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import { DropdownMenu, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
-import { Button } from "./ui/button"
+
 import { DropdownMenuContent, DropdownMenuItem } from "./ui/dropdown-menu"
+import Image from "next/image"
 
 // Menu items.
 const items = [
@@ -47,6 +49,15 @@ const items = [
 export function AppSidebar() {
   return (
     <Sidebar>
+      <SidebarHeader>
+        <SidebarMenuItem>
+          <SidebarMenuButton asChild>
+           
+            <span style={{ display: "inline-block " }}>ASTU</span>
+          
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
           <SidebarGroupLabel>Application</SidebarGroupLabel>
