@@ -1,14 +1,16 @@
-import { Calendar, ChevronUp, Home, Inbox, Link, Search, Settings, User2 } from "lucide-react"
+import { Calendar, ChevronUp, Home, Inbox,  Plus, Projector, Search, Settings, User2 } from "lucide-react"
 
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarGroup,
+  SidebarGroupAction,
   SidebarGroupContent,
   SidebarGroupLabel,
   SidebarHeader,
   SidebarMenu,
+  SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarSeparator,
@@ -16,7 +18,7 @@ import {
 import { DropdownMenu, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
 
 import { DropdownMenuContent, DropdownMenuItem } from "./ui/dropdown-menu"
-import Image from "next/image"
+import Link from "next/link"
 
 // Menu items.
 const items = [
@@ -78,7 +80,32 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
-        
+        <SidebarGroup>
+          <SidebarGroupLabel>Projects</SidebarGroupLabel>
+          <SidebarGroupAction>
+            <Plus/> <span className="sr-only">Add Projects</span>
+          </SidebarGroupAction>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/#">
+                  <Projector/>
+                      See all projects
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+                 <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/#">
+                  <Plus/>
+                      See all projects
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
