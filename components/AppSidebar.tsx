@@ -168,13 +168,21 @@ export function AppSidebar() {
                  <SidebarMenuSub>
                   <SidebarMenuSubItem>
                     <SidebarMenuSubButton>
-                      <Link href={"/"}>
-                          Capston project
+                      <Link href={"/#"} className="flex gap-0.5">
+                         <Plus className="p-1"/>   <span className="p-0.5">Add project </span>
                       </Link>
                     </SidebarMenuSubButton>
                   </SidebarMenuSubItem>
                  </SidebarMenuSub>
-                 
+                 <SidebarMenuSub>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton>
+                      <Link href={"/#"} className="flex gap-0.5">
+                         <Plus className="p-1"/>   <span className="p-0.5">Add Catagories </span>
+                      </Link>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                 </SidebarMenuSub>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
