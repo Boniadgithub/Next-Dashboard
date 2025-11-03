@@ -13,7 +13,11 @@ import {
   SidebarMenuAction,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuBadge,
   SidebarSeparator,
+  SidebarMenuSub,
+  SidebarMenuSubItem,
+  SidebarMenuSubButton,
 } from "@/components/ui/sidebar"
 import { DropdownMenu, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu"
 
@@ -77,6 +81,9 @@ export function AppSidebar() {
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
+                  {item.title==="Inbox" && (
+                    <SidebarMenuBadge>24</SidebarMenuBadge>
+                  )}
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
@@ -141,6 +148,36 @@ export function AppSidebar() {
           
         </SidebarGroup>
         </Collapsible>
+        
+
+        <SidebarGroup>
+          <SidebarGroupLabel>Nested items</SidebarGroupLabel>
+          <SidebarGroupAction>
+            <Plus/> <span className="sr-only">Add Projects</span>
+          </SidebarGroupAction>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/#">
+                  <Projector/>
+                      See all projects
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+                 <SidebarMenuSub>
+                  <SidebarMenuSubItem>
+                    <SidebarMenuSubButton>
+                      <Link href={"/"}>
+                          Capston project
+                      </Link>
+                    </SidebarMenuSubButton>
+                  </SidebarMenuSubItem>
+                 </SidebarMenuSub>
+                 
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
