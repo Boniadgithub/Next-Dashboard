@@ -1,4 +1,4 @@
-import { Calendar, ChevronUp, Home, Inbox,  Plus, Projector, Search, Settings, User2 } from "lucide-react"
+import { Calendar, ChevronDown, ChevronUp, Home, Inbox,  Plus, Projector, Search, Settings, User2 } from "lucide-react"
 
 import {
   Sidebar,
@@ -19,6 +19,8 @@ import { DropdownMenu, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu
 
 import { DropdownMenuContent, DropdownMenuItem } from "./ui/dropdown-menu"
 import Link from "next/link"
+import { Collapsible } from "@radix-ui/react-collapsible"
+import { CollapsibleContent, CollapsibleTrigger } from "./ui/collapsible"
 
 // Menu items.
 const items = [
@@ -106,6 +108,39 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+          <Collapsible defaultOpen className="group/collapsible">
+        <SidebarGroup>
+        <SidebarGroupLabel asChild>
+          <CollapsibleTrigger>
+          Collapsable Group
+          <ChevronDown className="ml-auto transition-transform group-data-[state=open]/collapsible:rotate-180" />
+          </CollapsibleTrigger>
+        </SidebarGroupLabel>
+        <CollapsibleContent>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/#">
+                  <Projector/>
+                      See all projects
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+                 <SidebarMenuItem>
+                <SidebarMenuButton asChild>
+                  <Link href="/#">
+                  <Plus/>
+                      See all projects
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+          </CollapsibleContent>
+          
+        </SidebarGroup>
+        </Collapsible>
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
