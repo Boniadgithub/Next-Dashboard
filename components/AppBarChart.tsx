@@ -1,6 +1,6 @@
 "use client";
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts";
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
  
 const chartConfig = {
   desktop: {
@@ -24,15 +24,24 @@ const chartData = [
 
 const AppBarChart = () => {
   return (
+    <div>
+      <h1 className="text-lg font-medium mb-6">Total Revenue</h1>
    <ChartContainer config={chartConfig} className="min-h-[200px] w-full">
       <BarChart accessibilityLayer data={chartData}>
         <CartesianGrid vertical={false} />
         <XAxis
       dataKey="month"
+      tickLine={true}
+      tickMargin={10}
+      axisLine={true}
+      tickFormatter={(value) => value.slice(0, 3)}
+    />
+     <YAxis
+      dataKey="desktop"
       tickLine={false}
       tickMargin={10}
       axisLine={false}
-      tickFormatter={(value) => value.slice(0, 3)}
+      
     />
      <ChartTooltip content={<ChartTooltipContent />} />
      <ChartLegend content={<ChartLegendContent />} />
@@ -40,6 +49,7 @@ const AppBarChart = () => {
         <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
       </BarChart>
     </ChartContainer>
+    </div>
   )
 }
 
