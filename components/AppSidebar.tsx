@@ -177,7 +177,7 @@ export function AppSidebar() {
                  <SidebarMenuSub>
                   <SidebarMenuSubItem>
                     <SidebarMenuSubButton>
-                      <Link href= "/#" className="flex gap-0.5">
+                      <Link href="/#" className="flex gap-0.5">
                          <Plus className="p-1"/>   <span className="p-0.5">Add Catagories </span>
                       </Link>
                     </SidebarMenuSubButton>
